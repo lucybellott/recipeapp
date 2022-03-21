@@ -6,9 +6,8 @@ export default function SingleDish({name, id, handleDelete}) {
   
 return (
     <div>
-        <span>{name}</span>
-        <br/>
-        <button onClick={handleDeleteButton}>Delete</button>
+        <span> 📌 {name}</span>
+        <button style={{width:"70px", fontSize:"12px"}} class="btn btn-danger" onClick={handleDeleteButton}>Delete</button>
         <br/>
         <br/>
     </div>

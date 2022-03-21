@@ -1,8 +1,9 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +36,31 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+h2 {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+span {
+  font-size: 30px;
+  margin-left: 20px;
+  text-align: left
+
+}
+
+button {
+  margin-left: 20px;
+}
+
+label {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+input {
+  margin-left: 20px;
 }

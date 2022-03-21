@@ -30,8 +30,9 @@ export default function DishForm({addDish}) {
     <div>
         <form onSubmit={handleSubmit}>
         <label>New Dish: </label>
+        <br/>
         <input type="text" placeholder="Name" value={newDish} onChange={handleNewDish}></input>
-        <button type="submit">Add Dish</button>
+        <button type="submit" class="btn btn-primary">Add Dish</button>
         </form>
         
     </div>

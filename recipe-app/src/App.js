@@ -37,7 +37,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>My Dishes</h1>
+      <h2>My Dishes 🍽</h2>
       <DishList dishes={dishes} handleDelete={handleDelete}/>
       <br/>
       <DishForm addDish={addDish}/>
