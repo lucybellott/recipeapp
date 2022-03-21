@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import DishList from './DishList'
+import {useState, useEffect} from 'react';
+import DishForm from './DishForm'
 
 function App() {
+
+  const [dishes, setDishes] = useState([])
+  
+  useEffect(() => {
+    fetch('http://localhost:3000/recipes')
+    .then(resp => resp.json())
+    .then(data => setDishes(data))
+
+  }, [])
+
+  const addDish = (newDish) => {
+    let newDishArray = [...dishes, newDish]
+      setDishes(newDishArray)
+    }
+
+    const handleDelete = (id) => {
+      fetch(`http://localhost:3000/recipes/${id}`, {
+        method: "DELETE",
+        credentials: 'include'
+      })
+        .then((r) => r.json())
+        .then(() => {
+          const updatedList = dishes.filter((dish) => {
+            return dish.id !== (id)})
+            setDishes(updatedList);
+        });
+    
+ }
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Dishes</h1>
+      <DishList dishes={dishes} handleDelete={handleDelete}/>
+      <br/>
+      <DishForm addDish={addDish}/>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Stroganoff"
+    },
+    {
+      "id": 2,
+      "name": "Mushroom Risotto"
+    },
+    {
+      "id": 3,
+      "name": "Omelette"
+    }
+  ]
+}
